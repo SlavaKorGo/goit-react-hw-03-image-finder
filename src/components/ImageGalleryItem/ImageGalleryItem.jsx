@@ -17,7 +17,7 @@ export class ImageGalleryItem extends React.Component {
 
     return(
       <li className={css.ImageGalleryItem} 
-      onAuxClick={this.toggleModal}>
+      onClick={this.toggleModal}>
         <img className={css.ImageGalleryItemImage}
         src={webformatURL}
         alt={tags} 

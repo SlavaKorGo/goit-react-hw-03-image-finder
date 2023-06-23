@@ -7,14 +7,24 @@ export class Modal extends React.Component {
         window.addEventListener('keydown', this.handleClick)
     }
 
+    componentWillUnmount() {
+      window.removeEventListener('keydown', this.handleClick);
+    }
+  
     handleClick = e => {
-        if (e.code === 'Escape') this.props.onClose();
+        if (e.code === 'Escape') 
+        {this.props.onClose()};
       };
+
+     
+    
 
       onOverlayClickClose = e => {
-        if (e.currentTarget === e.target) this.props.onClose(); 
+        if (e.target === e.currentTarget ) 
+        {this.props.onClose()}; 
       };
 
+     
     render() {
         const {url, alt} = this.props; 
 
