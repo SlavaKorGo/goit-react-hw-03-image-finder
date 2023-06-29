@@ -16,19 +16,22 @@ export class ImageGalleryItem extends React.Component {
     const {showModal} = this.state;
 
     return(
-      <li className={css.ImageGalleryItem} 
-      onClick={this.toggleModal}>
-        <img className={css.ImageGalleryItemImage}
-        src={webformatURL}
-        alt={tags} 
-        loading="lazy">
-        </img>
-        {showModal && 
-        <Modal 
-        url={largeImageURL}
-        alt={tags} 
-        onClose={this.toggleModal}/>}
-      </li>
-    )
+      <>
+            <li className={css.ImageGalleryItem} 
+            onClick={this.toggleModal}>
+              <img className={css.ImageGalleryItemImage}
+              src={webformatURL}
+              alt={tags} 
+              loading="lazy">
+              </img>
+             
+            </li>
+       {showModal && 
+              <Modal 
+              url={largeImageURL}
+              alt={tags} 
+              onClose={this.toggleModal}/>}
+      </>
+          )
   }
 }; 
